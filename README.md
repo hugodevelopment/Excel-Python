@@ -19,7 +19,10 @@ Para ler com a base de dados criado no Python, é importante acessá-la utilizan
    import pandas as pd 
    tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx')
    display(tabela)
-
-
-
+   
+   O resultado será:
+   
+<p align="center">
+  <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/149997437-e453f5b8-17e7-4120-8c34-4187e06c4547.png">
+</p>
 
