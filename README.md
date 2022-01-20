@@ -26,3 +26,14 @@ Para ler com a base de dados criado no Python, é importante acessá-la utilizan
   <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/149997437-e453f5b8-17e7-4120-8c34-4187e06c4547.png">
 </p>
 
+Agora vamos imprimir um dado especifico em na tabela, neste caso vamos o valor do índice 3. Também aproveitei para melhorar o design dela.
+
+import pandas as pd 
+tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx') #aqui irá ler os dados em Excel
+display(tabela) #vamos imprimir a tabela de um jeito mais bonito
+print("O valor do índice 3 na coluna base é:", tabela['Base'] [3]) #escolhendo um valor espeficico para ler
+
+O resultado será:
+
+
+
