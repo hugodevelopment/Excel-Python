@@ -16,9 +16,10 @@ O Objetivo é ler esses dados utilizando o pandas no Python, a base da dados est
 
 Para ler com a base de dados criado no Python, é importante acessá-la utilizando o Pandas. Estou utilizando o google collab, então é importante conectar a base de dados criada no excel a conta do google drive, depois disso é bem tranquilo. Vamos ver o código utilizado abaixo:
 
-   import pandas as pd 
-   tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx')
-   display(tabela)
+
+     import pandas as pd 
+     tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx')
+     display(tabela)
    
    O resultado será:
    
@@ -28,10 +29,10 @@ Para ler com a base de dados criado no Python, é importante acessá-la utilizan
 
 Agora vamos imprimir um dado especifico em na tabela, neste caso vamos o valor do índice 3. Também aproveitei para melhorar o design dela.
 
-import pandas as pd 
-tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx') #aqui irá ler os dados em Excel
-display(tabela) #vamos imprimir a tabela de um jeito mais bonito
-print("O valor do índice 3 na coluna base é:", tabela['Base'] [3]) #escolhendo um valor espeficico para ler
+    import pandas as pd 
+    tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython1.xlsx') #aqui irá ler os dados em Excel
+    display(tabela) #vamos imprimir a tabela de um jeito mais bonito
+    print("O valor do índice 3 na coluna base é:", tabela['Base'] [3]) #escolhendo um valor espeficico para ler
 
 O resultado será:
 
