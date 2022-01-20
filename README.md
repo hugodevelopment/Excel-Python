@@ -36,5 +36,10 @@ Agora vamos imprimir um dado especifico em na tabela, neste caso vamos o valor d
 
 O resultado será:
 
+<p align="center">
+  <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/150399406-c7d89c92-a743-490c-9098-d12e84ed802b.png">
+</p>
+
+
 
 
