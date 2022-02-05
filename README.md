@@ -48,8 +48,22 @@ Após isso, podemos apenas realizar os comandos necessários.
 A ideia é reproduzir um gráfico semelhante a este: 
 
 <p align="center">
-  <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/150399406-c7d89c92-a743-490c-9098-d12e84ed802b.png">
+  <img width="370" height="300" src= "https://user-images.githubusercontent.com/62472486/152660432-6246b8d6-6789-43cd-90cd-c0bdf5bf92cb.png">
 </p>
+
+O código utilizando para criar este gráfico de forma semelhante no python foi:
+
+    from re import X
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython3.xlsx') #aqui irá ler os dados em Excel
+    display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
+    
+    plt.pie(tabela['Idades'],labels= tabela["Nomes"],autopct="%1.0f%%") #gráfico em pizza com legenda e porcentagem
+    plt.show()
+
+
 
 
 
