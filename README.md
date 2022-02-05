@@ -63,6 +63,10 @@ O código utilizando para criar este gráfico de forma semelhante no python foi:
 
 O resultado foi esse:
 
+<p align="center">
+  <img width="300" height="300" src= "https://user-images.githubusercontent.com/62472486/152660722-2bdcc27f-6574-4a13-a37e-deb2d6ebfc83.png">
+</p>
+
 
 
 
