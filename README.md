@@ -58,8 +58,6 @@ O código utilizando para criar este gráfico de forma semelhante no python foi:
     import matplotlib.pyplot as plt
 
     tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython3.xlsx') #aqui irá ler os dados em Excel
-    display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
-    
     plt.pie(tabela['Idades'],labels= tabela["Nomes"],autopct="%1.0f%%") #gráfico em pizza com legenda e porcentagem
     plt.show()
 
