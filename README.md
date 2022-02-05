@@ -48,7 +48,7 @@ Após isso, podemos apenas realizar os comandos necessários.
 A ideia é reproduzir um gráfico semelhante a este: 
 
 <p align="center">
-  <img width="370" height="300" src= "https://user-images.githubusercontent.com/62472486/152660432-6246b8d6-6789-43cd-90cd-c0bdf5bf92cb.png">
+  <img width="370" height="270" src= "https://user-images.githubusercontent.com/62472486/152660594-3bd40ed3-3dea-444e-a744-10851e9a1fee.png">
 </p>
 
 O código utilizando para criar este gráfico de forma semelhante no python foi:
