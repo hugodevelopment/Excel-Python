@@ -40,6 +40,21 @@ O resultado será:
   <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/150399406-c7d89c92-a743-490c-9098-d12e84ed802b.png">
 </p>
 
+# 2º Passo:  Gerando os primeiros gráficos do Excel no Python
+
+Para criar os primeiros gráficos de no python com arquivos em Excel é importante duas etapas: 1º Ler a planilha com os dados e 2º utilizar a biblioteca matplotlib.
+Após isso, podemos apenas realizar os comandos necessários.
+
+A ideia é reproduzir um gráfico semelhante a este: 
+
+<p align="center">
+  <img width="300" height="400" src= "https://user-images.githubusercontent.com/62472486/150399406-c7d89c92-a743-490c-9098-d12e84ed802b.png">
+</p>
+
+
+
+
+
 
 
 
