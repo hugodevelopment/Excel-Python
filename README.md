@@ -61,6 +61,8 @@ O código utilizando para criar este gráfico de forma semelhante no python foi:
     plt.pie(tabela['Idades'],labels= tabela["Nomes"],autopct="%1.0f%%") #gráfico em pizza com legenda e porcentagem
     plt.show()
 
+O resultado foi esse:
+
 
 
 
