@@ -70,7 +70,7 @@ O resultado foi esse:
 Como comparação:
 
 <p align="center">
-  <img width="250" height="250" src= "https://user-images.githubusercontent.com/62472486/152699312-6e9ea2c0-ff82-4264-8bec-c0ba48f57e82.png">
+  <img width="300" height="200" src= "https://user-images.githubusercontent.com/62472486/152699312-6e9ea2c0-ff82-4264-8bec-c0ba48f57e82.png">
 </p>
 
 
