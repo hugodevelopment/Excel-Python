@@ -3,29 +3,31 @@ from re import X
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
 from numpy import mean
 from numpy import std
 
-#Agora irei estudar como colocar e editar legendas no gráfico para ficar mais bonito e visual
+tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython4.xlsx') #aqui irá ler os dados em Excel
+display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
 
-#Neste caso irei plotar a função f(x) = 2x
-tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython5.xlsx') #aqui irá ler os dados em Excel
-display(tabela)
-
-plt.figure(figsize=(6,4))
-
-
-# Agora irei inserir as legendas nos eixos x e y
-plt.xlabel("x")
-plt.ylabel("f(x) = y")
-plt.grid(True) #Aqui coloco uma linhas de grade
-
-plt.plot(tabela["x"], tabela["y^2"], color="green", label="f(x) = x^2")
-# Vou adicionar uma nova reta no gráfico da função y = x/2
-plt.plot(tabela["x"],tabela['x/2'], color="red", label ="f(x) = x/2") 
-#Vou adicionar outra reta no gráfico da função y = x + 3
-plt.plot(tabela["x"],tabela['x+3'], color="blue", label="f(x) = x+3")
+#Aqui posso criar um gráfico de dispersão com os eixos x e y
+plt.scatter(tabela['F(gf)'],tabela['l(mm)'], color="red", label="Medias: F(gf) 11.7 e l(mm) 35.09") 
+plt.xlabel("F(gf)") #Colocando legendas no eixo x
+plt.ylabel("l(mm)") #Colocando legendas no eixo y
+plt.grid(True)
 plt.legend()
+plt.show()
+
+print()
+print("Media de F(gf): ", str(round(mean(tabela['F(gf)']),2)))
+print("Media de l(mm): ", str(round(mean(tabela['l(mm)']),2)))
+
+print("Desvio Padrão de F(gf)", str(round(std(tabela['F(gf)']),1)))
+print("Desvio Padrão de l(mm)", str(round(std(tabela["l(mm)"]),1)))
+
+
+
+
 
 
 
