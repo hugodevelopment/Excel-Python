@@ -13,17 +13,21 @@ tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython5.xls
 display(tabela)
 
 plt.figure(figsize=(6,4))
-plt.plot(tabela["x"], tabela["y^2"])
+
 
 # Agora irei inserir as legendas nos eixos x e y
 plt.xlabel("x")
 plt.ylabel("f(x) = y")
 plt.grid(True) #Aqui coloco uma linhas de grade
 
+plt.plot(tabela["x"], tabela["y^2"], color="green", label="f(x) = x^2")
 # Vou adicionar uma nova reta no gráfico da função y = x/2
-plt.plot(tabela["x"],tabela['x/2'], color="red")
+plt.plot(tabela["x"],tabela['x/2'], color="red", label ="f(x) = x/2") 
 #Vou adicionar outra reta no gráfico da função y = x + 3
-plt.plot(tabela["x"],tabela['x+3'])
+plt.plot(tabela["x"],tabela['x+3'], color="blue", label="f(x) = x+3")
+plt.legend()
+
+
 
 
 
