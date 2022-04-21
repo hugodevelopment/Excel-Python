@@ -8,7 +8,7 @@ from numpy import mean
 from numpy import std
 
 tabela = pd.read_excel('/content/drive/MyDrive/Python com Excel/ExcelPython4.xlsx') #aqui irá ler os dados em Excel
-display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
+display(tabela) #vamos imprimir a tabela de um jeito mais bonito
 
 #Aqui posso criar um gráfico de dispersão com os eixos x e y
 plt.scatter(tabela['F(gf)'],tabela['l(mm)'], color="red", label="Medias: F(gf) 11.7 e l(mm) 35.09") 
