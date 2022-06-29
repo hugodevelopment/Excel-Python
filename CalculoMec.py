@@ -20,9 +20,22 @@ print("Desvio Padrão da Comprimento(cm): ", str(round(std(tabela['Comprimento']
 print("Desvio Padrão da Área(cm²): ", str(round(std(tabela['Área']),2)))
 
 
+print('---------------- Calculos do Desvio Padrão Amostral -----------------')
+
+Raiz_das_medidas = 5
+
+Dp_Largura = np.std(tabela["Largura"])
+Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
+print(Erro_Media_Largura)
+
+Dp_Comprimento = np.std(tabela["Comprimento"])
+Erro_Media_Comprimento = Dp_Comprimento / Raiz_das_medidas
+print(Erro_Media_Comprimento)
 
 
-
+Dp_Area = np.std(tabela["Área"])
+Erro_Media_Área = Dp_Area / Raiz_das_medidas
+print(Erro_Media_Área)
 
 
 
