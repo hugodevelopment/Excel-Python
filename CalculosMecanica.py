@@ -16,11 +16,15 @@ from numpy import std
 tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx") #aqui irá ler os dados em Excel
 display(tabela) #vamos imprimir a tabela de um jeito mais bonito
 
+print()
+
 print('---------------- Calculos da Média ------------------------------')
 
 print("Media de Largura(cm): ", str(round(mean(tabela['L']),2)))
 print("Media do Comprimento(cm): ", str(round(mean(tabela['C']),2)))
 print("Media da Area(cm²): ", str(round(mean(tabela['Área']),2)))
+
+print()
 
 print('---------------- Calculos do Desvio Padrão Amostral -----------------')
 
@@ -28,6 +32,7 @@ print("Desvio Padrão da Largura(cm): ", str(round(std(tabela['L']),2)))
 print("Desvio Padrão da Comprimento(cm): ", str(round(std(tabela['C']),2)))
 print("Desvio Padrão da Área(cm²): ", str(round(std(tabela['Área']),2)))
 
+print()
 
 print('---------------- Calculos Erro da Media -----------------')
 
@@ -37,44 +42,51 @@ Dp_Largura = np.std(tabela["L"])
 Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
 print("Erro médio da Largura(cm): ", Erro_Media_Largura, 2)
 
+
+
 Dp_Comprimento = np.std(tabela["C"])
 Erro_Media_Comprimento = Dp_Comprimento / Raiz_das_medidas
 print("Erro médio do Comprimento(cm): ", Erro_Media_Comprimento)
+
 
 
 Dp_Area = np.std(tabela["Área"])
 Erro_Media_Área = Dp_Area / Raiz_das_medidas
 print("Erro médio da Área (cm²): ",Erro_Media_Área)
 
-print('---------------- Calculos Erro Totais -----------------')
+print()
+
+print('-------- Calculos Erro Padrão Largura e Comprimento --------')
 
 Erro_do_instrumento = 0.1
 
 Erro_total_largura = np.sqrt((Erro_do_instrumento)**2 + (Dp_Largura)**2)
-print(round(Erro_total_largura,2))
+print("Erro Padrão Largura: ",round(Erro_total_largura,2))
 
 Erro_total_comprimento = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Comprimento)**2))
-print(round(Erro_total_comprimento,2))
+print("Erro Padrão Largura: ", round(Erro_total_comprimento,2))
+
+"""# Histogramas que precisamos:
+
+*   Histograma da Largura
+*   Histograma do Comprimento
+*   Histograma da Área
 
 
+"""
 
-import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-
 tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx") #aqui irá ler os dados em Excel
-#display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
-
 
 # Criando o histograma para os dados da largura, com o int
 plt.hist(tabela['L'], bins= 3, edgecolor="black")
 
 # Colocando o título no histograma
-plt.title("Histograma Largura")
+plt.title("Histograma Largura (cm)")
 
 média = 74.9
 cor = "#FA8072"
-plt.axvline(média, color=cor, label="Média_Largura: 149,5")
+plt.axvline(média, color=cor, label="Média_Largura: 74,9")
 plt.legend()
 
 plt.grid()
@@ -84,23 +96,16 @@ plt.xlabel("Largura (cm)")
 plt.ylabel("Frequência dos dados")
 
 plt.tight_layout()
- 
-
 plt.show()
 
-import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx") #aqui irá ler os dados em Excel
-#display(tabela) #vamos imprimir a tabelo de um jeito mais bonito
-
-
-# Criando o histograma para os dados da largura, com o int
+# Criando o histograma para os dados da Área
 plt.hist(tabela['Área'],bins=3, edgecolor="black")
 
 # Colocando o título no histograma
-plt.title("Histograma Area (cm)")
+plt.title("Histograma Area (cm²)")
 
 média = 11203.23
 cor = "#FA8072"
@@ -111,6 +116,31 @@ plt.grid()
 
 # Colocando legenda nos Eixos
 plt.xlabel("Área (cm²)")
+plt.ylabel("Frequência dos dados")
+
+plt.tight_layout()
+ 
+
+plt.show()
+
+import matplotlib.pyplot as plt
+
+tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx") #aqui irá ler os dados em Excel
+# Criando o histograma para os dados da Área
+plt.hist(tabela['C'],bins=2, edgecolor="black")
+
+# Colocando o título no histograma
+plt.title("Histograma Comprimento(cm)")
+
+média =  149.5
+cor = "#FA8072"
+plt.axvline(média, color=cor, label="Média_Comprimento:  149.5") 
+plt.legend()
+
+plt.grid()
+
+# Colocando legenda nos Eixos
+plt.xlabel("Comprimento(cm)")
 plt.ylabel("Frequência dos dados")
 
 plt.tight_layout()
