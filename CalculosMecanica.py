@@ -35,7 +35,7 @@ Raiz_das_medidas = 5
 
 Dp_Largura = np.std(tabela["L"])
 Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
-print("Erro médio da Largura(cm): ",Erro_Media_Largura)
+print("Erro médio da Largura(cm): ", Erro_Media_Largura, 2)
 
 Dp_Comprimento = np.std(tabela["C"])
 Erro_Media_Comprimento = Dp_Comprimento / Raiz_das_medidas
@@ -46,12 +46,15 @@ Dp_Area = np.std(tabela["Área"])
 Erro_Media_Área = Dp_Area / Raiz_das_medidas
 print("Erro médio da Área (cm²): ",Erro_Media_Área)
 
-print('---------------- Calculos Erro Total  -----------------')
+print('---------------- Calculos Erro Totais -----------------')
 
 Erro_do_instrumento = 0.1
 
 Erro_total_largura = np.sqrt((Erro_do_instrumento)**2 + (Dp_Largura)**2)
 print(Erro_total_largura)
+
+Erro_total_comprimento = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Comprimento)**2))
+print(Erro_total_comprimento)
 
 
 
