@@ -51,10 +51,10 @@ print('---------------- Calculos Erro Totais -----------------')
 Erro_do_instrumento = 0.1
 
 Erro_total_largura = np.sqrt((Erro_do_instrumento)**2 + (Dp_Largura)**2)
-print(Erro_total_largura)
+print(round(Erro_total_largura,2))
 
 Erro_total_comprimento = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Comprimento)**2))
-print(Erro_total_comprimento)
+print(round(Erro_total_comprimento,2))
 
 
 
