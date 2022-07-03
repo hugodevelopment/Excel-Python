@@ -148,15 +148,34 @@ plt.tight_layout()
 
 plt.show()
 
+"""# Calculando a correlação entre dos dados da largura e comprimento.
+
+**Para isso iremos utilizar a covariancia entre x e y e coeficiente de Pearson. Depois iremos criar o gráfico de dispersão para visualizar como as grandezas de correlacionam graficamente**
+
+"""
+
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 
-from numpy import mean
-from numpy import std
+
+print("Calculando a covariancia entre comprimento e largura")
+Covariancia = np.cov(tabela["L"], tabela["C"])[1][0]
+print(Covariancia)
+
+print()
+
+print("Calculando o Coeficiente de Pearson")
+
+print()
+
+r = Covariancia/(Dp_Comprimento*Dp_Largura)
+
+print("Coeficiente de Pearson r =", r)
+
+import pandas as pd
+import matplotlib.pyplot as plt
 
 tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx")#aqui irá ler os dados em Excel
-
 
 plt.scatter(tabela["L"],tabela["C"],) #Aqui posso criar um gráfico de dispersão com os eixos x e y
 plt.xlabel("Largura") #Colocando legendas no eixo x
