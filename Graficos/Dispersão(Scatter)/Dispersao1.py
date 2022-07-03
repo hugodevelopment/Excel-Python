@@ -1,4 +1,4 @@
-from re import X
+
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -16,7 +16,3 @@ plt.ylabel("l(mm)") #Colocando legendas no eixo y
 
 plt.show()
 
-# print()
-# print("Media de F(gf): ", str(round(mean(tabela['F(gf)']),2)))
-# print()
-# print("Media de l(mm): ", str(round(mean(tabela['l(mm)']),2)))
