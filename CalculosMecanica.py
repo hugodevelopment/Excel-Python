@@ -207,13 +207,26 @@ plt.grid()
 
 plt.show()
 
+"""**Podemos ver também que os gráficos não apresentam correlação, o maior valor de uma grandeza é o menor de outra**
+
+**Agora podemos calcular a incerteza da Área por meio da propagação de erros utilizando a relação abaixo:**
+
+\begin{equation}
+ \boxed{σ_{A} = A \sqrt{\left (\dfrac{σ_{c}}{c} \right)^2 + \left (\dfrac{ σ_{l}}{l} \right)^2}} 
+\end{equation}
+"""
+
 # Calculando as medias de C, L e A
+
+# Média do Comprimento
 Media_C = np.mean(tabela["C"])
 print(Media_C)
 
+#Média da Largura
 Media_L = np.mean(tabela["L"])
 print(Media_L)
 
+# A média sendo Média de C * Média de L
 A_Media = Media_C * Media_L
 
 print(A_Media)
