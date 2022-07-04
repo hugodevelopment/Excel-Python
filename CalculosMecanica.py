@@ -41,16 +41,16 @@ Raiz_das_medidas = 5
 
 Dp_Comprimento = np.std(tabela["C"])
 Erro_Media_Comprimento = Dp_Comprimento / Raiz_das_medidas
-print("Erro médio do Comprimento(cm): ", Erro_Media_Comprimento)
+print("Erro médio do Comprimento(cm): ", round(Erro_Media_Comprimento,2))
 
 Dp_Largura = np.std(tabela["L"])
 Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
-print("Erro médio da Largura(cm): ", Erro_Media_Largura, 2)
+print("Erro médio da Largura(cm): ", round(Erro_Media_Largura,2))
 
 
 Dp_Area = np.std(tabela["Área"])
 Erro_Media_Área = Dp_Area / Raiz_das_medidas
-print("Erro médio da Área (cm²): ",Erro_Media_Área)
+print("Erro médio da Área (cm²): ",round(Erro_Media_Área,2))
 
 print()
 
@@ -66,9 +66,9 @@ print("Erro Padrão Largura: ", round(Erro_total_largura,2))
 
 """# Histogramas que precisamos:
 
-*   Histograma da Largura
-*   Histograma do Comprimento
-*   Histograma da Área
+*   Histograma da Largura (cm)
+*   Histograma do Comprimento (cm)
+*   Histograma da Área (cm²)
 
 
 """
@@ -82,6 +82,7 @@ plt.hist(tabela['L'], bins= 3, edgecolor="black")
 # Colocando o título no histograma
 plt.title("Histograma Largura (cm)")
 
+#Podemos criar um legenda no gráfico para apontar a média
 média = 74.9
 cor = "#FA8072"
 plt.axvline(média, color=cor, label="Média_Largura: 74,9")
@@ -94,6 +95,7 @@ plt.xlabel("Largura (cm)")
 plt.ylabel("Frequência dos dados")
 
 plt.tight_layout()
+#plotando o gráfico
 plt.show()
 
 import matplotlib.pyplot as plt
@@ -105,6 +107,7 @@ plt.hist(tabela['Área'],bins=3, edgecolor="black")
 # Colocando o título no histograma
 plt.title("Histograma Area (cm²)")
 
+#Podemos criar um legenda no gráfico para apontar a média
 média = 11203.23
 cor = "#FA8072"
 plt.axvline(média, color=cor, label="Média_Área: 11203.23")
@@ -130,6 +133,7 @@ plt.hist(tabela['C'],bins=2, edgecolor="black")
 # Colocando o título no histograma
 plt.title("Histograma Comprimento(cm)")
 
+#Podemos criar um legenda no gráfico para apontar a média
 média =  149.5
 cor = "#FA8072"
 plt.axvline(média, color=cor, label="Média_Comprimento:  149.5") 
