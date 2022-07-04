@@ -8,8 +8,6 @@ Original file is located at
 
 **Para começar a coletar os dados vamos realizar os seguintes cálculos:**
 
-
-
 1.   Média de C, L e A
 2.   Desvio Padrão de C, L e A
 3.   Erro da Média de C, L A
@@ -80,7 +78,7 @@ print('-------- Calculos Erro Padrão Largura e Comprimento --------')
 Erro_do_instrumento = 0.1
 
 Erro_total_comprimento = np.sqrt((Erro_do_instrumento)**2 + (Dp_Comprimento)**2)
-print("Erro Padrão Comprimento: ",round(Erro_total_comprimento,2))
+print("Erro Padrão Comprimento: ",round(Erro_total_comprimento,3))
 
 Erro_total_largura = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Largura)**2))
 print("Erro Padrão Largura: ", round(Erro_total_largura,2))
@@ -174,6 +172,13 @@ plt.show()
 """# Calculando a correlação entre dos dados do comprimento e largura.
 
 **Para isso iremos utilizar a covariancia entre x e y e coeficiente de Pearson (r). Depois iremos criar o gráfico de dispersão para visualizar como as grandezas de correlacionam graficamente.**
+
+**Coeficiente de correlação linear de Pearson(r) que varia o intervalo entre -1 e 1.**
+
+
+\begin{equation}
+ \boxed{r = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}} 
+\end{equation}
 
 """
 
