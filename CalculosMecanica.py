@@ -20,34 +20,32 @@ print()
 
 print('---------------- Calculos da Média ------------------------------')
 
-print("Media de Largura(cm): ", str(round(mean(tabela['L']),2)))
 print("Media do Comprimento(cm): ", str(round(mean(tabela['C']),2)))
-print("Media da Area(cm²): ", str(round(mean(tabela['Área']),2)))
+print("Media do Largura(cm): ", str(round(mean(tabela['L']),2)))
+print("Media da Área(cm²): ", str(round(mean(tabela['Área']),2)))
 
 print()
 
 print('---------------- Calculos do Desvio Padrão Amostral -----------------')
 
-print("Desvio Padrão da Largura(cm): ", str(round(std(tabela['L']),2)))
 print("Desvio Padrão da Comprimento(cm): ", str(round(std(tabela['C']),2)))
+print("Desvio Padrão da Largura(cm): ", str(round(std(tabela['L']),2)))
 print("Desvio Padrão da Área(cm²): ", str(round(std(tabela['Área']),2)))
 
 print()
 
-print('---------------- Calculos Erro da Media -----------------')
+print('---------------- Calculos Erro da Média -----------------')
 
 Raiz_das_medidas = 5
-
-Dp_Largura = np.std(tabela["L"])
-Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
-print("Erro médio da Largura(cm): ", Erro_Media_Largura, 2)
-
 
 
 Dp_Comprimento = np.std(tabela["C"])
 Erro_Media_Comprimento = Dp_Comprimento / Raiz_das_medidas
 print("Erro médio do Comprimento(cm): ", Erro_Media_Comprimento)
 
+Dp_Largura = np.std(tabela["L"])
+Erro_Media_Largura = Dp_Largura / Raiz_das_medidas
+print("Erro médio da Largura(cm): ", Erro_Media_Largura, 2)
 
 
 Dp_Area = np.std(tabela["Área"])
@@ -60,11 +58,11 @@ print('-------- Calculos Erro Padrão Largura e Comprimento --------')
 
 Erro_do_instrumento = 0.1
 
-Erro_total_largura = np.sqrt((Erro_do_instrumento)**2 + (Dp_Largura)**2)
-print("Erro Padrão Largura: ",round(Erro_total_largura,2))
+Erro_total_comprimento = np.sqrt((Erro_do_instrumento)**2 + (Dp_Comprimento)**2)
+print("Erro Padrão Comprimento: ",round(Erro_total_comprimento,2))
 
-Erro_total_comprimento = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Comprimento)**2))
-print("Erro Padrão Largura: ", round(Erro_total_comprimento,2))
+Erro_total_largura = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Largura)**2))
+print("Erro Padrão Largura: ", round(Erro_total_largura,2))
 
 """# Histogramas que precisamos:
 
