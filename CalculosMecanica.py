@@ -220,17 +220,17 @@ plt.show()
 
 # Média do Comprimento
 Media_C = np.mean(tabela["C"])
-print(Media_C)
+print("Média de Comprimento: ", round(Media_C,2))
 
 #Média da Largura
 Media_L = np.mean(tabela["L"])
-print(Media_L)
+print("Média da largura: ", round(Media_L,2))
 
 # A média sendo Média de C * Média de L
 A_Media = Media_C * Media_L
 
-print(A_Media)
+print("Média da Área: ", round(A_Media,2))
 
 #Calculando a propagação de erros
 Propagação = A_Media * np.sqrt((Erro_Media_Comprimento/Media_C)**2 + (Erro_Media_Largura/Media_L)**2)
-print(Propagação)
+print("Incerteza Área: ", round(Propagação,2))
