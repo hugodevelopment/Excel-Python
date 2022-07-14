@@ -234,7 +234,7 @@ plt.show()
 import pandas as pd
 import matplotlib.pyplot as plt
 
-tabela = pd.read_excel("/content/drive/MyDrive/Colab Notebooks/PlanilhaMec.xlsx")#aqui irá ler os dados em Excel
+tabela = pd.read_excel("/content/PlanilhaMec.xlsx")#aqui irá ler os dados em Excel
 
 plt.scatter(tabela["L"],tabela["C"],) #Aqui posso criar um gráfico de dispersão com os eixos x e y
 plt.xlabel("Largura(cm)") #Colocando legendas no eixo x que é o comprimento neste caso
@@ -287,23 +287,25 @@ Caso a discrepância caia na região entre 2x e 3x a incerteza(σx) o experiment
 
 """
 
-#Calculando com um exemplo
+#Calculando com um exemplo 
 
 #Valor de referencia
-Ferro_ref = 7.86
+Area_ref = 150 * 75
+print(Area_ref)
 #Valor da medicao
-Ferro_medicao1 = 8.1 
+A_Media 
 #Erro medicao
-Erro_medicao1 = 0.2
+Propagação
+
 
 # Calculando a discrepancia, vamos precisar calcular o módulo
-discrepancia = np.abs(round(Ferro_medicao1 - Ferro_ref,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
+discrepancia = np.abs(round(A_Media - Area_ref,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
 print("O valor da discrepancia é :", discrepancia)
 
 #Agora vamos avaliar a compatibilidade
-if(discrepancia < 2*Erro_medicao1):
-   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_medicao1)
+if(discrepancia < 2*Propagação):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Propagação)
 else:
-   print("O valor está na região entre 2x e 3x a incerteza, logo inconclusivo")
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo :", discrepancia, ">",  2*Propagação)
 
 !jupyter nbconvert --to html CalculosMecanica.ipynb
