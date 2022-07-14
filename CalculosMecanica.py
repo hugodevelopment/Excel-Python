@@ -55,14 +55,14 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 18,
+      "execution_count": 34,
       "metadata": {
         "id": "cLsnLMYodZ2S",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 1000
         },
-        "outputId": "6d356cb1-31b9-47e6-f9bd-15364d415ad8"
+        "outputId": "ff20cf25-6a79-454d-a203-b29518d5a96c"
       },
       "outputs": [
         {
@@ -98,7 +98,7 @@
             ],
             "text/html": [
               "\n",
-              "  <div id=\"df-56f890d3-a3ae-47ec-9314-afdbaeb4abee\">\n",
+              "  <div id=\"df-96587469-c519-4cbb-897f-c096aa01ff61\">\n",
               "    <div class=\"colab-df-container\">\n",
               "      <div>\n",
               "<style scoped>\n",
@@ -329,7 +329,7 @@
               "  </tbody>\n",
               "</table>\n",
               "</div>\n",
-              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-56f890d3-a3ae-47ec-9314-afdbaeb4abee')\"\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-96587469-c519-4cbb-897f-c096aa01ff61')\"\n",
               "              title=\"Convert this dataframe to an interactive table.\"\n",
               "              style=\"display:none;\">\n",
               "        \n",
@@ -380,12 +380,12 @@
               "\n",
               "      <script>\n",
               "        const buttonEl =\n",
-              "          document.querySelector('#df-56f890d3-a3ae-47ec-9314-afdbaeb4abee button.colab-df-convert');\n",
+              "          document.querySelector('#df-96587469-c519-4cbb-897f-c096aa01ff61 button.colab-df-convert');\n",
               "        buttonEl.style.display =\n",
               "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
               "\n",
               "        async function convertToInteractive(key) {\n",
-              "          const element = document.querySelector('#df-56f890d3-a3ae-47ec-9314-afdbaeb4abee');\n",
+              "          const element = document.querySelector('#df-96587469-c519-4cbb-897f-c096aa01ff61');\n",
               "          const dataTable =\n",
               "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
               "                                                     [key], {});\n",
@@ -908,6 +908,26 @@
           ]
         }
       ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Calculando compatibilidade em Python**\n",
+        " \n",
+        " A compatibilidade  e discrepância é dada pela seguinte relação:\n",
+        "\n",
+        " \\begin{equation}\n",
+        "    |\\bar{x}-x_{ref}|< 2σ_{\\bar{x}}\n",
+        "\\end{equation}  \n",
+        "\n",
+        "Sendo que se a discrepancia for menor que 2x a incerteza(σx) do valor de referência, aceita-se a compatibilidade.\n",
+        "\n",
+        "Caso a discrepância caia na região entre 2x e 3x a incerteza(σx) o experimento é dado como **inconclusivo**.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "-J_UNW7LAjEa"
+      }
     },
     {
       "cell_type": "code",
