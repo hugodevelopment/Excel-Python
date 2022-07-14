@@ -297,7 +297,13 @@ Ferro_medicao1 = 8.1
 Erro_medicao1 = 0.2
 
 # Calculando a discrepancia, vamos precisar calcular o módulo
-discrepancia = np.abs(Ferro_medicao1 - Ferro_ref) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
-print("O valor da discrepancia é :", round(discrepancia,2))
+discrepancia = np.abs(round(Ferro_medicao1 - Ferro_ref,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*Erro_medicao1):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_medicao1)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza, logo inconclusivo")
 
 !jupyter nbconvert --to html CalculosMecanica.ipynb
