@@ -292,15 +292,15 @@ Caso a discrepância caia na região entre 2x e 3x a incerteza(σx) o experiment
 
 """
 
-#Calculando com um exemplo 
+#Calculando compatibilidade para Área com o valor de referência
 
 #Valor de referencia
 Area_ref = 150 * 75
 print(Area_ref)
-#Valor da medicao
+#Valor da Area médio
 A_Media 
-#Erro medicao
-Propagação
+#Erro medição da Área
+Erro_Padrao_Area
 
 
 # Calculando a discrepancia, vamos precisar calcular o módulo
@@ -308,9 +308,9 @@ discrepancia = np.abs(round(A_Media - Area_ref,2)) #Utilizando a função abs pa
 print("O valor da discrepancia é :", discrepancia)
 
 #Agora vamos avaliar a compatibilidade
-if(discrepancia < 2*Propagação):
-   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Propagação)
+if(discrepancia < 2*Erro_Padrao_Area):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_Padrao_Area)
 else:
-   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo :", discrepancia, ">",  2*Propagação)
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_Padrao_Area)
 
 !jupyter nbconvert --to html CalculosMecanica.ipynb
