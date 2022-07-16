@@ -313,4 +313,48 @@ if(discrepancia < 2*Erro_Padrao_Area):
 else:
    print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_Padrao_Area)
 
+#Calculando compatibilidade para Comprimento com o valor de referência
+
+#Valor de referencia
+Comp_ref = 150.00
+#Valor da Area médio
+Media_C
+print(Media_C)
+#Erro medição da Área
+Erro_total_comprimento
+
+
+# Calculando a discrepancia, vamos precisar calcular o módulo
+discrepancia = np.abs(round(Comp_ref - Media_C,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*Erro_total_comprimento):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_total_comprimento)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_total_comprimento)
+
+
+
+#Calculando compatibilidade para Comprimento com o valor de referência
+
+#Valor de referencia
+Larg_ref = 75.00
+#Valor da Area médio
+Media_L
+print(Media_L)
+#Erro medição da Área
+Erro_total_largura
+
+
+# Calculando a discrepancia, vamos precisar calcular o módulo
+discrepancia = np.abs(round(Larg_ref - Media_L,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*Erro_total_largura):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_total_largura)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_total_largura)
+
 !jupyter nbconvert --to html CalculosMecanica.ipynb
