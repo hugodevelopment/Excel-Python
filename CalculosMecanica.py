@@ -72,7 +72,7 @@ print("Erro médio da Largura(cm): ", round(Erro_Media_Largura,2))
 
 Dp_Area = np.std(tabela["Área"])
 Erro_Media_Área = Dp_Area / Raiz_das_medidas
-print("Erro médio da Área (cm²): ",round(Erro_Media_Área,2))
+print("Erro médio da Área (cm²): ",round(Erro_Media_Área,3))
 
 print()
 
@@ -177,6 +177,8 @@ plt.tight_layout()
 
 plt.show()
 
+
+
 """# Calculando a correlação entre dos dados do comprimento e largura.
 
 **Para isso iremos utilizar a covariancia entre x e y e coeficiente de Pearson (r). Depois iremos criar o gráfico de dispersão para visualizar como as grandezas de correlacionam graficamente.**
@@ -240,19 +242,43 @@ tabela = pd.read_excel("/content/PlanilhaMec.xlsx")#aqui irá ler os dados em Ex
 plt.scatter(tabela["L"],tabela["C"],) #Aqui posso criar um gráfico de dispersão com os eixos x e y
 plt.xlabel("Largura(cm)") #Colocando legendas no eixo x que é o comprimento neste caso
 plt.ylabel("Comprimento(cm)") #Colocando legendas no eixo y que é a largura neste caso
-plt.title("Dispersão entre C(cm) x L(cm)")
+plt.title("Dispersão entre L(cm) x C(cm)")
 plt.grid()
+plt.savefig("Dispersão2.png")
 
 plt.show()
 
 """**Podemos ver também que os gráficos não apresentam correlação, o maior valor de uma grandeza é o menor de outra**
 
+Agora criarei os gráficos da turma com as médias de comprimento, largura e área
+"""
+
+import matplotlib.pyplot as plt
+
+idades=[149.88,150.02,150.00,149.99,149.84,150.01,150.07,150.02,149.01,150.15,149.51,150.01,150.17,150.22,149.90]
+plt.title('Média comprimento da turma', fontsize=20)
+plt.xlabel('Médias Comprimento(cm)', fontsize=15)
+plt.ylabel('Frequência Absoluta', fontsize=15)
+
+média =  149.98
+cor = "black"
+plt.axvline(média, color=cor, label="Média_Comprimento:  149.98") 
+plt.legend()
+
+plt.tick_params(labelsize=18)
+plt.grid()
+
+plt.hist(idades, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
+plt.savefig("Media_Alunos_Comp.jpg")
+plt.show()
+
+"""
+
 **Agora podemos calcular a incerteza da Área por meio da propagação de erros utilizando a relação abaixo:**
 
 \begin{equation}
  \boxed{σ_{A} = A \sqrt{\left (\dfrac{σ_{c}}{c} \right)^2 + \left (\dfrac{ σ_{l}}{l} \right)^2}} 
-\end{equation}
-"""
+\end{equation}"""
 
 # Calculando as medias de C, L e A
 
@@ -336,7 +362,7 @@ else:
 
 
 
-#Calculando compatibilidade para Comprimento com o valor de referência
+#Calculando compatibilidade para Largura com o valor de referência
 
 #Valor de referencia
 Larg_ref = 75.00
