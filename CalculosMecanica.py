@@ -255,7 +255,7 @@ Agora criarei os gráficos da turma com as médias de comprimento, largura e ár
 
 import matplotlib.pyplot as plt
 
-idades=[149.88,150.02,150.00,149.99,149.84,150.01,150.07,150.02,149.01,150.15,149.51,150.01,150.17,150.22,149.90]
+Media_Comp=[149.88,150.02,150.00,149.99,149.84,150.01,150.07,150.02,149.01,150.15,149.51,150.01,150.17,150.22,149.90]
 plt.title('Média comprimento da turma', fontsize=20)
 plt.xlabel('Médias Comprimento(cm)', fontsize=15)
 plt.ylabel('Frequência Absoluta', fontsize=15)
@@ -270,6 +270,48 @@ plt.grid()
 
 plt.hist(idades, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
 plt.savefig("Media_Alunos_Comp.jpg")
+plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+Media_Larg=[75.19,75.08,75.12,75.09,74.92,75.16,75.16,75.08,75.17,75.19,74.91,75.11,75.29,75.09,74.90]
+plt.title('Média largura da turma', fontsize=20)
+plt.xlabel('Médias Largura(cm)', fontsize=15)
+plt.ylabel('Frequência Absoluta', fontsize=15)
+
+média =  75.10
+cor = "black"
+plt.axvline(média, color=cor, label="Média_Largura:  75.10") 
+plt.legend()
+
+plt.tick_params(labelsize=10)
+plt.grid()
+
+plt.hist(Media_Larg, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
+plt.savefig("Media_Alunos_Larg.jpg")
+plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+Media_Larg=[75.19,75.08,75.12,75.09,74.92,75.16,75.16,75.08,75.17,75.19,74.91,75.11,75.29,75.09,74.90]
+plt.title('Média largura da turma', fontsize=20)
+plt.xlabel('Médias Largura(cm)', fontsize=15)
+plt.ylabel('Frequência Absoluta', fontsize=15)
+
+média =  75.10
+cor = "black"
+plt.axvline(média, color=cor, label="Média_Largura:  75.10") 
+plt.legend()
+
+plt.tick_params(labelsize=10)
+plt.grid()
+
+plt.hist(Media_Larg, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
+plt.savefig("Media_Alunos_Larg.jpg")
 plt.show()
 
 """
