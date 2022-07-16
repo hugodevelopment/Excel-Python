@@ -123,6 +123,7 @@ plt.ylabel("Frequência dos dados")
 plt.tight_layout()
 #plotando o gráfico
 plt.show()
+plt.savefig('Largura.png')
 
 import matplotlib.pyplot as plt
 
@@ -154,7 +155,7 @@ import matplotlib.pyplot as plt
 
 tabela = pd.read_excel("/content/PlanilhaMec.xlsx") #aqui irá ler os dados em Excel
 # Criando o histograma para os dados da Área
-plt.hist(tabela['C'],bins=4, edgecolor="black")
+plt.hist(tabela['C'],bins=5, edgecolor="black")
 
 # Colocando o título no histograma
 plt.title("Histograma Comprimento(cm)")
@@ -239,7 +240,7 @@ tabela = pd.read_excel("/content/PlanilhaMec.xlsx")#aqui irá ler os dados em Ex
 plt.scatter(tabela["L"],tabela["C"],) #Aqui posso criar um gráfico de dispersão com os eixos x e y
 plt.xlabel("Largura(cm)") #Colocando legendas no eixo x que é o comprimento neste caso
 plt.ylabel("Comprimento(cm)") #Colocando legendas no eixo y que é a largura neste caso
-
+plt.title("Dispersão entre C(cm) x L(cm)")
 plt.grid()
 
 plt.show()
@@ -269,8 +270,12 @@ A_Media = Media_C * Media_L
 print("Média da Área: ", round(A_Media,2))
 
 #Calculando a propagação de erros
-Propagação = A_Media * np.sqrt((Erro_Media_Comprimento/Media_C)**2 + (Erro_Media_Largura/Media_L)**2)
-print("Incerteza Área: ", round(Propagação,2))
+Propagação = A_Media * np.sqrt((Erro_do_instrumento/Media_C)**2 + (Erro_do_instrumento/Media_L)**2)
+print("Propagação Área: ", round(Propagação,2))
+
+#Erro Padrão da Área
+Erro_Padrao_Area = np.sqrt((Propagação)**2 + (Erro_Media_Área)**2)
+print("Erro Padrão da Área: ", round(Erro_Padrao_Area,2))
 
 """**Calculando compatibilidade em Python**
  
