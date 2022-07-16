@@ -80,11 +80,11 @@ print('-------- Calculos Erro Padrão Largura e Comprimento --------')
 
 Erro_do_instrumento = 0.1
 
-Erro_total_comprimento = np.sqrt((Erro_do_instrumento)**2 + (Dp_Comprimento)**2)
+Erro_total_comprimento = np.sqrt((Erro_do_instrumento)**2 + (Erro_Media_Comprimento)**2)
 print("Erro Padrão Comprimento: ",round(Erro_total_comprimento,3))
 
-Erro_total_largura = np.sqrt(((Erro_do_instrumento)**2 + (Dp_Largura)**2))
-print("Erro Padrão Largura: ", round(Erro_total_largura,2))
+Erro_total_largura = np.sqrt(((Erro_do_instrumento)**2 + (Erro_Media_Largura)**2))
+print("Erro Padrão Largura: ", round(Erro_total_largura,3))
 
 """# Histogramas que precisamos:
 
@@ -273,7 +273,7 @@ print("Média da Área: ", round(A_Media,2))
 Propagação = A_Media * np.sqrt((Erro_do_instrumento/Media_C)**2 + (Erro_do_instrumento/Media_L)**2)
 print("Propagação Área: ", round(Propagação,2))
 
-#Erro Padrão da Área
+#Erro Padrão da Área 
 Erro_Padrao_Area = np.sqrt((Propagação)**2 + (Erro_Media_Área)**2)
 print("Erro Padrão da Área: ", round(Erro_Padrao_Area,2))
 
