@@ -297,21 +297,21 @@ plt.show()
 
 import matplotlib.pyplot as plt
 
-Media_Larg=[75.19,75.08,75.12,75.09,74.92,75.16,75.16,75.08,75.17,75.19,74.91,75.11,75.29,75.09,74.90]
-plt.title('Média largura da turma', fontsize=20)
-plt.xlabel('Médias Largura(cm)', fontsize=15)
+Media_Area=[11269.40,11264.40,11268.30,11263.79,11222.72,11278.52,11279.71,11264.40,11272.48,11290.83,11203.23,11267.70,11305.25,11230.81]
+plt.title('Média Área da turma', fontsize=20)
+plt.xlabel('Médias Área(cm²)', fontsize=15)
 plt.ylabel('Frequência Absoluta', fontsize=15)
 
-média =  75.10
+média =  11264.12
 cor = "black"
-plt.axvline(média, color=cor, label="Média_Largura:  75.10") 
+plt.axvline(média, color=cor, label="Média_Area:11264.12") 
 plt.legend()
 
 plt.tick_params(labelsize=10)
 plt.grid()
 
-plt.hist(Media_Larg, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
-plt.savefig("Media_Alunos_Larg.jpg")
+plt.hist(Media_Area, 4,color='red', alpha=0.7, edgecolor='black')
+plt.savefig("Media_Alunos_Area.jpg")
 plt.show()
 
 """
