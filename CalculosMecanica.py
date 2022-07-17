@@ -256,19 +256,19 @@ Agora criarei os gráficos da turma com as médias de comprimento, largura e ár
 import matplotlib.pyplot as plt
 
 Media_Comp=[149.88,150.02,150.00,149.99,149.84,150.01,150.07,150.02,149.01,150.15,149.51,150.01,150.17,150.22,149.90]
-plt.title('Média comprimento da turma', fontsize=20)
-plt.xlabel('Médias Comprimento(cm)', fontsize=15)
-plt.ylabel('Frequência Absoluta', fontsize=15)
+plt.title('Média comprimento da turma', fontsize=10)
+plt.xlabel('Médias Comprimento(cm)', fontsize=10)
+plt.ylabel('Frequência Absoluta', fontsize=10)
 
 média =  149.98
 cor = "black"
 plt.axvline(média, color=cor, label="Média_Comprimento:  149.98") 
 plt.legend()
 
-plt.tick_params(labelsize=18)
+plt.tick_params(labelsize=10)
 plt.grid()
 
-plt.hist(idades, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
+plt.hist(Media_Comp, 4, rwidth=0.9, color='red', alpha=0.7, edgecolor='black')
 plt.savefig("Media_Alunos_Comp.jpg")
 plt.show()
 
@@ -277,9 +277,9 @@ plt.show()
 import matplotlib.pyplot as plt
 
 Media_Larg=[75.19,75.08,75.12,75.09,74.92,75.16,75.16,75.08,75.17,75.19,74.91,75.11,75.29,75.09,74.90]
-plt.title('Média largura da turma', fontsize=20)
-plt.xlabel('Médias Largura(cm)', fontsize=15)
-plt.ylabel('Frequência Absoluta', fontsize=15)
+plt.title('Média largura da turma', fontsize=10)
+plt.xlabel('Médias Largura(cm)', fontsize=10)
+plt.ylabel('Frequência Absoluta', fontsize=10)
 
 média =  75.10
 cor = "black"
@@ -298,9 +298,9 @@ plt.show()
 import matplotlib.pyplot as plt
 
 Media_Area=[11269.40,11264.40,11268.30,11263.79,11222.72,11278.52,11279.71,11264.40,11272.48,11290.83,11203.23,11267.70,11305.25,11230.81]
-plt.title('Média Área da turma', fontsize=20)
-plt.xlabel('Médias Área(cm²)', fontsize=15)
-plt.ylabel('Frequência Absoluta', fontsize=15)
+plt.title('Média Área da turma', fontsize=10)
+plt.xlabel('Médias Área(cm²)', fontsize=10)
+plt.ylabel('Frequência Absoluta', fontsize=10)
 
 média =  11264.12
 cor = "black"
@@ -357,13 +357,13 @@ Sendo que se a discrepancia for menor que 2x a incerteza(σx) do valor de refer�
 
 Caso a discrepância caia na região entre 2x e 3x a incerteza(σx) o experimento é dado como **inconclusivo**.
 
-
+**Compatibilidade minha Área com a Área de referência de largura 75.00 x comprimento 150.00**
 """
 
 #Calculando compatibilidade para Área com o valor de referência
 
 #Valor de referencia
-Area_ref = 150 * 75
+Area_ref = 150.00 * 75.00
 print(Area_ref)
 #Valor da Area médio
 A_Media 
@@ -380,6 +380,8 @@ if(discrepancia < 2*Erro_Padrao_Area):
    print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_Padrao_Area)
 else:
    print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_Padrao_Area)
+
+"""**Compatibilidade meu Comprimento com comprimento de referência 150.00**"""
 
 #Calculando compatibilidade para Comprimento com o valor de referência
 
@@ -402,7 +404,7 @@ if(discrepancia < 2*Erro_total_comprimento):
 else:
    print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_total_comprimento)
 
-
+"""**Compatibilidade minha Largura com a Largura de referência de largura 75.00**"""
 
 #Calculando compatibilidade para Largura com o valor de referência
 
@@ -416,7 +418,7 @@ Erro_total_largura
 
 
 # Calculando a discrepancia, vamos precisar calcular o módulo
-discrepancia = np.abs(round(Larg_ref - Media_L,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
+discrepancia = np.abs(round(Media_L-Larg_ref,2)) #Utilizando a função abs para calcular o valor absoluto, ou o módulo
 print("O valor da discrepancia é :", discrepancia)
 
 #Agora vamos avaliar a compatibilidade
@@ -424,5 +426,86 @@ if(discrepancia < 2*Erro_total_largura):
    print("É compativel com o valor de referencia", discrepancia, "<" , 2*Erro_total_largura)
 else:
    print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*Erro_total_largura)
+
+"""**Compatibilidade meu comprimento com o comprimento de referência da turma**"""
+
+#Valor de referencia
+Comp_Turma = 149.98
+#Valor da Area médio
+Media_C
+#Erro medição da comprimento
+Erro_total_comprimento
+#Erro medio
+Erro_Medio_comp = 0.05
+
+
+#incerteza para compatibilidade
+incerteza_comp =  np.sqrt((Erro_total_comprimento)**2 + (Erro_Medio_comp)**2)
+print("A incerteza para compatibilidade",incerteza_comp)
+
+
+#Calculando a discrepancia, vamos precisar calcular o módulo
+discrepancia = np.abs(Media_C - Comp_Turma)#Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*incerteza_comp):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*incerteza_comp)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*incerteza_comp)
+
+"""**Compatibilidade minha largura com a largura de referência da turma**"""
+
+#Valor de referencia
+Larg_Turma = 75.10
+#Valor da Area médio
+Media_L
+#Erro medição da comprimento
+Erro_total_largura
+#Erro medio
+Erro_Medio_larg = 0.01
+
+
+#incerteza para compatibilidade
+incerteza_larg =  np.sqrt((Erro_total_comprimento)**2 + (Erro_Medio_larg)**2)
+print(incerteza_larg)
+
+
+#Calculando a discrepancia, vamos precisar calcular o módulo
+discrepancia = np.abs(Media_L - Larg_Turma)#Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*incerteza_larg):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*incerteza_larg)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*incerteza_larg)
+
+"""**Compatibilidade minha área com a área de referência da turma**"""
+
+#Valor de referencia
+Area_Turma = 11264.12
+#Valor da Area médio
+A_Media
+#Erro medição da comprimento
+Erro_Padrao_Area
+#Erro medio
+Erro_Medio_Area = 2.98
+
+
+#incerteza para compatibilidade
+incerteza =  np.sqrt((Erro_Padrao_Area)**2 + (Erro_Medio_Area)**2)
+print(incerteza)
+
+
+#Calculando a discrepancia, vamos precisar calcular o módulo
+discrepancia = np.abs(A_Media - Area_Turma)#Utilizando a função abs para calcular o valor absoluto, ou o módulo
+print("O valor da discrepancia é :", discrepancia)
+
+#Agora vamos avaliar a compatibilidade
+if(discrepancia < 2*incerteza):
+   print("É compativel com o valor de referencia", discrepancia, "<" , 2*incerteza)
+else:
+   print("O valor está na região entre 2x e 3x a incerteza(sigma), logo inconclusivo:", discrepancia, ">",  2*incerteza)
 
 !jupyter nbconvert --to html CalculosMecanica.ipynb
